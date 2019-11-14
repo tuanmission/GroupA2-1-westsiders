@@ -1,7 +1,7 @@
 Result Size: 1420 x 275
 <!DOCTYPE html>
 <html lang="en">
-<title>TransForMation</title>
+<title>Plans and Progress</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -46,4 +46,65 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a href="../References.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">References</a>
   </div>
 ​</div>
-​
+​<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+      <center><h1>Plans and Progress</h1></center>
+      <h5 class="w3-padding-32"></h5>
+<h7 class="w3-padding-32">To have an effective autonomous transport solution that caters to the need of people of various needs and requirements in the community. As many people are unable to access effective transportation due to disability or other circumstances, we’ve decided to do an autonomous bus that can be booked on demand.</h7>
+<p>
+<h7 class="w3-padding-32">The motivation for this project has come from the motivation to help the community while using our passion for information technology to do so. Our ideas for an autonomous bus system have come from the input of two project ideas, Tuan Luong’s automated railway and Melissa Eder’s idea for disabilities. We are at the initial stages of our project, determining the technologies required for the autonomous bus and recruiting people required to develop the project.</h7>
+<p>
+<h7 class="w3-padding-32">We have determined the required technologies for the project. After being researching the on-market and the off-market solutions currently out there, we have found these technologies particularly useful in delivering the required objectives in our scope. However, these technologies require adaption of infrastructure and systems of the road systems in the area before it is deployed.</h7>
+<p>
+<h7 class="w3-padding-32">We will need to use on-board sensors, cameras, GPS and telecommunications to obtain and analyse information using computer algorithms, and then respond appropriately by controlling the vehicle in safety-critical situations. We are aiming for level 5 automation with these technologies. Level 5 (Full Automation) negates the need for pedals and a steering wheel, completely removing the driver from the driving task under all conditions. These vehicles will need to be capable of autonomously communicating with each other, with roadside infrastructure, such as traffic control signals, or with other devices, such as mobile phones.</h7>
+<p>
+<h7 class="w3-padding-32">The autonomous bus by TransForMation will be powered by Nvidia’s deep learning accelerator named Jetson AGX Xavier. It is an SoC (System-on-chip) with very high processing power at 32 TOPs (trillion operations per second) on a small package of 10 watts. (NVIDIA Developer, 2019a)</h7>
+<p>
+<h7 class="w3-padding-32">Development of the system will be done using the Jetson AGX Xavier development kit (NVIDIA Developer, 2019b), utilising the open-source NVDLA deep learning compiler. (Mukund, Gaikwad and Harwell, 2019)</h7>
+<p>
+<h7 class="w3-padding-32">By utilising a specially designed SoC on a small form factor, it will be suitable in automotive use as it allows easy integration into the vehicles systems, provide a low power consumption solution while being very efficient at its job.</h7>
+<p>
+<h7 class="w3-padding-32">The hardware to provide the data for the Xavier SoC includes Texas Instruments’ mmWave sensors and Continental automotive cameras.</h7>
+<p>
+<h7 class="w3-padding-32">The Xavier SoC will be trained using machine learning to recognise obstacles, roadside infrastructure, traffic control signals and people using the camera’s situated at the front, rear and side of the bus. It can then apply the electronically controlled brakes as necessary. The Continental MFL400 automotive camera can also provide lane keep assist functions if the bus is drifting out of the lane which can be easily corrected via an electrical steering system. (Continental-automotive.com, 2019a) As for the side, rearview and additional front camera monitoring, the autonomous bus will utilise the Continental SVS220 Surround View System. (Continental-automotive.com, 2019b)</h7>
+<p>
+<h7 class="w3-padding-32">Texas Instruments makes a variety of millimetre wave sensors for different ranges of distances. These millimetre wave sensors are currently used in modern automotive vehicles today such as all-speed radar cruise, pre-crash safety systems, cross-traffic monitoring and blind-spot monitoring. (Lexus, 2014)</h7>
+<p>
+<h7 class="w3-padding-32">For the autonomous bus application, TransForMation have identified that a short-medium millimetre wave sensor (AWR1843) would be appropriate for a bus as the development and trial will involve slow to medium speeds. Even at normal road speeds, a detection range of 150 metres is a sufficient amount of distance to allow the SoC to analyse the data and respond accordingly. (training.ti.com, 2019)</h7>
+<p>
+<h7 class="w3-padding-32">We have described the first few technologies needed for our bus; however, they need to work hand in hand together with infrastructure changes as well to ensure that the autonomous bus has an effective environment to operative safely in.</h7>
+<p>
+<h7 class="w3-padding-32">The first issue is human drivers can respond appropriately to changes in road layout as a result of roadworks or vehicle crashes, however, autonomous control vehicles such as our bus may have difficulty responding to changing road conditions. Therefore, consideration needs to be given to machine learning of the Xavier SoC for any future changes in traffic management.</h7>
+<p>
+<h7 class="w3-padding-32">This could take the form of a connected roadworks warning system that communicates the details of the work, including the location of workers, configuration of the work site, and speed of vehicles around the site of the road work and providing appropriate algorithms for the AI in response to this. However, this is only feasible for planned roadworks; unplanned traffic incidents will still require special sensing and developing appropriate response measures for the AI of the autonomous bus.</h7>
+<p>
+<h7 class="w3-padding-32">The sensory technologies on our autonomous bus which are the Texas Instruments millimetre wave scanners and the continental automotive cameras may require good road conditions and road conditions and signage in order for the Xavier SoC AI to navigate effectively and safely. When there are long cracks in roads or markings are faded, the system may have difficulty staying in the correct lane. This may be mitigated in the future by implementation of digital road marking and signage infrastructure, but until then, road markings and signage will require regular maintenance in the area where the bus will be deployed to support it. However, even with regular maintenance, traditional road signs and markings may become difficult for the bus to recognise in bad weather. To mitigate this, we could use digital waypoints on specific road signs to remind the bus to stop or the Xavier SoC machine learning can be programmed to remember the locations of specific signs and update itself regularly.</h7>
+<p>
+<h7 class="w3-padding-32">CAN-bus communication is currently used in automotive systems to interconnect the ECUs and allows multiplexing, reducing the amount of wiring. However, CAN bus doesn’t have great bandwidth capabilities, only at 1 Mbit/s. Due to the increased demand for bandwidth from the autonomous bus system, it would be wise to invest in newer CAN technology, known as CAN FD. CAN FD increases transmission speeds considerably, from 1 Mbit/s to 8 Mbit/s; it also increases the packet size from 8 bytes to 64 bytes so the efficiency of the protocol is further improved. (CSS Electronics, 2019)</h7>
+<p>
+<h7 class="w3-padding-32">During the development and testing cycle, security will be a main overarching goal blanketing the system. In the current society, cyber-attacks are a real threat. With the proposal of TransForMation’s autonomous bus, there are various safety aspects to consider. An important aspect that TransForMation has identified is the potential for the system to be hacked or tampered with. It is a serious issue as there is no dedicated driver as a backup; to combat this issue, machine learning using hardware attached to the OBD-II port of the vehicle can “learn and protect” the integrity of the system. The anti-hacking device would be able to shut down systems if it detects any attacks/abnormalities, putting the bus into a “limp” mode. It is also possible to implement software analytics to carry out similar functions. (Causevic, 2019)</h7>
+<p>
+<h7 class="w3-padding-32">Furthermore, the GPS receiver in the bus will be able to pinpoint the location of the bus if any issues or attacks occur and the system can send out SOS messages to a central depot to deploy teams to rectify the issue. For this reason, the successful roll-out of automated vehicles that are capable of functioning at the highest level will require mobile internet coverage combined with a strong GPS signal across the whole road network.</h7>
+<p>
+<h7 class="w3-padding-32">Onto the testing, we have outlined how we would test the vehicle in the scope of limits and the test plan. The first step is to test our vehicle once a working prototype is developed. We would test our vehicle in a controlled and small environment such as a university campus or an industrial estate as outlined in the scope of limits. As stated in the scope and limits we would incorporate trial feedback for improvement before deployment into the community. Once government approval has been sought, it would be deployed into the trial community such as St Albans. This means the first time that our vehicle would be integrated into the public space and roadways.</h7>
+<p>
+<h7 class="w3-padding-32">After the trial period, we would gradually roll out the buses to more communities as stated in our scope of limits. We would roll this out to more communities where there is a high demand for transport for special needs such as Dandenong, Cranbourne and Frankston where there is high dependency and special needs. From this, we would then become gradually commercialised with our technology once the final design of our autonomous bus has been developed with the feedback from the trial periods and the gradual community roll out.</h7>
+<p>
+<h7 class="w3-padding-32">From this, we would use the feedback to implement this into our final design of the autonomous bus.</h7>
+<p>
+<h7 class="w3-padding-32">The final design would take approximately a few more years to finalise. The final design of our autonomous bus is the bus that will be implemented if we were to win tenders for implementing our autonomous bus solution. This is because the technologies we currently have are currently premature and the gradual roll-out of the autonomous bus will happen in stages to ensure that adequate feedback can be taken on board and the current on the market technologies will need to be refined more to meet the needs of different communities and environments that the autonomous bus will encounter. Once the final design of the autonomous bus has been finalised, we can start commercialising our technology and putting it out on the market for shareholders and potential investors to see. However even though that is the final design, it is not the final design. This is because there is no final design since our autonomous bus will continue to improve and we will continue to refine our technology throughout its lifespan.</h7>
+<p>
+<h7 class="w3-padding-32">We would declare our project a commercial success if it meets the required outcomes below: </h7>
+<li><h7 class="w3-padding-32"> Able to transport passengers in a safe and effective manner </h7></li>
+<li><h7 class="w3-padding-32"> Able to respond to the ever-changing and growing needs of a community </h7></li>
+<li><h7 class="w3-padding-32"> Meets the current legislative requirements and standards for autonomous vehicles </h7></li>
+<li><h7 class="w3-padding-32"> Operates autonomously and safely in the public space. </h7></li>
+<li><h7 class="w3-padding-32"> Community places trust in our project </h7></li>
+<li><h7 class="w3-padding-32"> We can negotiate with stakeholders to invest in our project and return dividends to the stakeholders. However, with this comes commercial responsibility, where we put people safety first over profits. </h7></li>
+<li><h7 class="w3-padding-32"> Our products become recognised worldwide and we can start getting tenders to implement autonomous bus solutions worldwide.</h7></li>
+<p>
+<h7 class="w3-padding-32">However, to get to this stage, we would need to pass through many milestones of development and testing. The biggest hurdles for this project to be declared a success is government approval of our autonomous bus to be deployed on public roads and placing the trust in the community that we will transport them to where they need to be, reliably and safely.</h7>
+<p>
+<h7 class="w3-padding-32">Throughout the development of this autonomous bus, we would need to negotiate with government agencies to ensure that our autonomous bus meets the required standard for autonomous vehicles and can meet the legislative requirements to be deployed on the public road. This is a big hurdle because we need to develop our technology according to the standards and that we put public safety first in order to seek approval from the government to be deployed on public roads. Government approval needs to be sought first before we can try it into a community environment.</h7>
+<p>
+<h7 class="w3-padding-32">If this project would be successful, it would make a significant improvement into the daily lives of many people and will lead the way in robotics and autonomous vehicles research which will have an impact not only on people, but on technology as well because our technology will be at the forefront of ground-breaking innovation that would inspire people to challenge the status quo and encourage more people about engineering and how it can make a wonderful impact on the community that we intend to serve.</h7>
